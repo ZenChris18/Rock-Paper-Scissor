@@ -1,19 +1,32 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
-    return Math.floor(Math.random() * 3);
+    let computer
+    let number = Math.floor(Math.random() * 3);
+    if(number === 0){
+        computer = "rock";
+    }
+    else if(number === 1){
+        computer = "scissors";
+    }
+    else{
+        computer = "paper";
+    }
+    return computer
+}
+function getHumanChoice(){
+    let pick = prompt("Enter you choice (rock, paper, scissors)")
+    return pick
 }
 
 
-let choice = getComputerChoice();
-let answer 
-
-if(choice === 0){
-    answer = "rock";
-} 
-else if (choice === 1){
-    answer = "paper";
-}
-else{
-    answer = "scissors"
+function playRound(humanChoice, computerChoice){
+    
 }
 
-console.log(answer)
+const humanSelection = getHumanChoice().toLowerCase();
+const computerSelection = getComputerChoice();
+
+
+playRound(humanSelection, computerSelection)
