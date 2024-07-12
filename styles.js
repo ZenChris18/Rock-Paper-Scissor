@@ -47,17 +47,25 @@ function playRound(humanChoice, computerChoice){
         }
         else if(humanChoice === 2){
             if(computerChoice === 0){
-                console.log("You Lose! You picked scissors while the computer picked rock")
+                console.log("You Lose! You picked scissors while the computer picked rock");
             }
             else if(computerChoice === 1){
-                console.log("You win! You picked scissors while the computer picked paper")
+                console.log("You win! You picked scissors while the computer picked paper");
             }
         }
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 
-playRound(humanSelection, computerSelection)
+function playGame(){
+    let i =0;
+    let times = 5;
+    for(let i = 0; i < times; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+playGame();
