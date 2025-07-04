@@ -67,9 +67,22 @@ function playGame(){
     const winner = document.getElementById("winner");
     let human = 0;
     let computer= 0;
+    let gameOver = false;
 
+
+    function gameWinner(){
+        if(human === win){
+        winner.textContent = "Human wins!"
+        return gameOver = true;
+        }
+        else if(computer === win){
+            winner.textContent = "Computer wins!"
+            return gameOver = true;
+        }
+    }
 
     rock.addEventListener('click', function(){
+        if(gameOver) return;
         let computerChoice = getComputerChoice();
         if((playRound(0, computerChoice)) === "human"){
             human+=1;
@@ -79,15 +92,11 @@ function playGame(){
             computer+=1;
             computerScore.textContent = computer;
         }
-        if(human === win){
-        winner.textContent = "Human wins!"
-        }
-        else if(computer === win){
-            winner.textContent = "Computer wins!"
-        }
+        gameWinner();
     })
 
     paper.addEventListener('click', function(){
+        if(gameOver) return;
         let computerChoice = getComputerChoice();
         if((playRound(1, computerChoice)) === "human"){
             human+=1;
@@ -97,15 +106,11 @@ function playGame(){
             computer+=1;
             computerScore.textContent = computer;
         }
-        if(human === win){
-        winner.textContent = "Human wins!"
-        }
-        else if(computer === win){
-            winner.textContent = "Computer wins!"
-        }
+        gameWinner();
     })
 
     scissors.addEventListener('click', function(){
+        if(gameOver) return;
         let computerChoice = getComputerChoice();
         if((playRound(2, computerChoice)) === "human"){
             human+=1;
@@ -115,12 +120,7 @@ function playGame(){
             computer+=1;
             computerScore.textContent = computer;
         }
-        if(human === win){
-        winner.textContent = "Human wins!"
-        }
-        else if(computer === win){
-            winner.textContent = "Computer wins!"
-        }
+        gameWinner();
     })
     
 }
