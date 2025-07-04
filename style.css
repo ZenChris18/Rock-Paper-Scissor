@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+    background-color: pink;
+    font-size: 3em;
+}
+
+.button{
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.button:hover{
+    background-color: lightblue;
+}
